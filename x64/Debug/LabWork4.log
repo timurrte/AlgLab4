@@ -1,0 +1,3 @@
+﻿  LabWork4.cpp
+C:\Users\timur\OneDrive\Документы\Учеба\2 курс\Теорія алгоритмів\src\4 lab\LabWork4\LabWork4.cpp(180,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  LabWork4.vcxproj -> C:\Users\timur\OneDrive\Документы\Учеба\2 курс\Теорія алгоритмів\src\4 lab\LabWork4\x64\Debug\LabWork4.exe

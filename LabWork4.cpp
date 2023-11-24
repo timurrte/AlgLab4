@@ -157,18 +157,23 @@ struct queue {
         cout << endl;
     }
 
-    void splitQueue(queue& original, queue& evenQueue, queue& oddQueue) {
-        while (!original.empty()) {
-            int current = original.pop();
-            if (current % 2 == 0) {
-                evenQueue.push(current);
-            }
-            else {
-                oddQueue.push(current);
-            }
+    void reverseQueue(queue& original) {
+        queue tempQueue;
+        int size = original.last - original.first; // Розмір оригінальної черги
+
+        // Переміщуємо всі елементи з оригінальної черги в тимчасову чергу
+        for (int i = 0; i < size; i++) {
+            tempQueue.push(original.pop());
         }
-        return;
+
+        // Переміщуємо всі елементи з тимчасової черги назад в оригінальну чергу в зворотному порядку
+        for (int i = 0; i < size; i++) {
+            int current = tempQueue.q[tempQueue.last - 1 - i];
+            original.push(current);
+        }
     }
+
+
 };
 
 int main() {
@@ -196,12 +201,9 @@ int main() {
     myqueue.show();
     cout << endl;
 
-    cout << "Split queue into 2:" << endl;
-    myqueue.splitQueue(myqueue, evenQueue, oddQueue);
-    cout << "Even numbers:" << endl;
-    evenQueue.show();
-    cout << "Odd numbers : " << endl;
-    oddQueue.show();
+    cout << "Reverse queue:" << endl;
+    myqueue.reverseQueue(myqueue);
+    myqueue.show();
 
 
     cout << endl;
